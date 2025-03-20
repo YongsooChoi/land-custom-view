@@ -1,0 +1,19 @@
+{
+  "manifest_version": 3,
+  "name": "네이버 부동산 커스텀 뷰",
+  "version": "0.1",
+  "description": "네이버 부동산의 데이터 원하는 방식으로 표시",
+  "permissions": ["scripting", "activeTab"],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://land.naver.com/*"],
+      "js": ["content.js"]
+    }
+  ],
+  "action": {
+    "default_popup": "popup.html"
+  }
+}
